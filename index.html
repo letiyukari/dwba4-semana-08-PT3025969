@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questões</title>
+    <script type="text/javascript">
+        function alertaQuestao1() {
+            alert("Alerta: Questão 01");
+        }
+
+        function alertaQuestao2() {
+            alert("Alerta: Questão 02");
+        }
+
+        function alertaQuestao3() {
+            let alunos = [
+                { nome: "João da Silva", nota1: 7, nota2: 8.5 },
+                { nome: "Maria Oliveira", nota1: 8, nota2: 9 },
+                { nome: "Carlos Pereira", nota1: 6.5, nota2: 7.5 }
+            ];
+
+            alunos.forEach(aluno => {
+                let multiplicacaoNota1 = aluno.nota1 * 0.6;
+                let multiplicacaoNota2 = aluno.nota2 * 0.4;
+                let notaTotal = multiplicacaoNota1 + multiplicacaoNota2;
+
+                alert(`Nome: ${aluno.nome}\nNota 1: ${aluno.nota1}\nNota 2: ${aluno.nota2}`);
+                alert(`Nota total: ${notaTotal}`);
+            });
+        }
+
+        function alertaQuestao4() {
+            class Aluno {
+                constructor(primeiroNome, segundoNome, primeiraNota, segundaNota) {
+                    this.primeiroNome = primeiroNome;
+                    this.segundoNome = segundoNome;
+                    this.primeiraNota = primeiraNota;
+                    this.segundaNota = segundaNota;
+                }
+
+                nomeCompleto() {
+                    return `${this.primeiroNome} ${this.segundoNome}`;
+                }
+
+                media() {
+                    return (this.primeiraNota * 0.6) + (this.segundaNota * 0.4);
+                }
+
+                situacao() {
+                    return this.media() > 6 ? "Aprovado" : "Reprovado";
+                }
+            }
+
+            let alunos = [
+                new Aluno("João", "da Silva", 7, 8.5),
+                new Aluno("Maria", "Oliveira", 8, 9),
+                new Aluno("Carlos", "Pereira", 6.5, 7.5),
+                new Aluno("Ana", "Souza", 9, 9.5),
+                new Aluno("Pedro", "Lima", 5, 6)
+            ];
+
+            alunos.forEach(aluno => {
+                alert(`Nome: ${aluno.nomeCompleto()}\nMédia: ${aluno.media()}\nSituação: ${aluno.situacao()}`);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Questões</h1>
+        <button onclick="alertaQuestao1()">Questão 1</button>
+        <button onclick="alertaQuestao2()">Questão 2</button>
+        <button onclick="alertaQuestao3()">Questão 3</button>
+        <button onclick="alertaQuestao4()">Questão 4</button>
+    </div>
+</body>
+</html>
